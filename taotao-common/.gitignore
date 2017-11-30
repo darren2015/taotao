@@ -1,7 +1,7 @@
-/target/
-.classpath
-.project
-.settings/
-.gitigore
+/target
+*.classpath
+*.project
+/.settings
+/.gitigore
 
 
