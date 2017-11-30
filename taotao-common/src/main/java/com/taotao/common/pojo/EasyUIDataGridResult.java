@@ -2,7 +2,12 @@ package com.taotao.common.pojo;
 
 import java.io.Serializable;
 import java.util.List;
-
+/**
+ * EasyUI列表数据源对应的POJO
+ * 
+ * @author Darren
+ * @date 2017年11月29日 下午3:07:10
+ */
 public class EasyUIDataGridResult implements Serializable{
 	/**
 	 * 

@@ -18,13 +18,19 @@ public class PageHelperTest {
 	public void testPageHelper() {
 		//配置插件
 		//在执行查询之前设置分页参数
-		PageHelper.startPage(1,10);
+		PageHelper.startPage(1,30);
 		//执行查询获取结果
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
-		TbItemMapper tbItemMapper = applicationContext.getBean(TbItemMapper.class);
+		ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
+		TbItemMapper tbItemMapper = ac.getBean(TbItemMapper.class);
 		TbItemExample example = new TbItemExample();
 		List<TbItem> list = tbItemMapper.selectByExample(example);
 		PageInfo<TbItem> pageInfo = new PageInfo<TbItem>(list);
+		System.out.println(pageInfo.getPageNum());
+		System.out.println(pageInfo.getPageSize());
+		List<TbItem> list2 = pageInfo.getList();
+		for (TbItem tbItem : list2) {
+			System.out.println(tbItem);
+		}
 		System.out.println(pageInfo);
 	}
 }
